@@ -11,14 +11,13 @@ exports.data = {
   },
 };
 
-exports.render = function (data) {
-  const [pageInfo] = data.pagination.items;
+exports.render = function ({ character }) {
   var f2 = function f2(d){
     Object.entries(d)
       .map(([key, val]) => (this[key] = val));
     return this;
   };
-  f2(pageInfo);
+  f2(character);
   return `<p>Name: ${name}</p>
   <p>Gender: ${gender}</p>
   <p>Species: ${species}</p>
